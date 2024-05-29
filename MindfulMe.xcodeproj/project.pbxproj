@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF1193CE2BF7BE3300BA0751 /* MindfulMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193CD2BF7BE3300BA0751 /* MindfulMeApp.swift */; };
+		FF1193D02BF7BE3300BA0751 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193CF2BF7BE3300BA0751 /* Login.swift */; };
+		FF1193D22BF7BE3500BA0751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1193D12BF7BE3500BA0751 /* Assets.xcassets */; };
+		FF1193D52BF7BE3500BA0751 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1193D42BF7BE3500BA0751 /* Preview Assets.xcassets */; };
+		FF1193DF2BF7BE3500BA0751 /* MindfulMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193DE2BF7BE3500BA0751 /* MindfulMeTests.swift */; };
+		FF1193E92BF7BE3500BA0751 /* MindfulMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193E82BF7BE3500BA0751 /* MindfulMeUITests.swift */; };
+		FF1193EB2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193EA2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift */; };
+		FF1193FC2BF7C1E900BA0751 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193FB2BF7C1E900BA0751 /* View+Extensions.swift */; };
+		FF1193FE2BF7C48400BA0751 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193FD2BF7C48400BA0751 /* CustomTF.swift */; };
+		FF1194002BF7DCE100BA0751 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1193FF2BF7DCE100BA0751 /* GradientButton.swift */; };
+		FF1194022BF7E9F800BA0751 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1194012BF7E9F800BA0751 /* Signup.swift */; };
+		FF1194072BF7F4F400BA0751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1194062BF7F4F400BA0751 /* ContentView.swift */; };
+		FF3FD5E52BFB8B1D0096937A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5E42BFB8B1D0096937A /* ForgotPassword.swift */; };
+		FF3FD5E72BFBA0FE0096937A /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5E62BFBA0FE0096937A /* PasswordResetView.swift */; };
+		FF3FD5E92BFBA6960096937A /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5E82BFBA6960096937A /* OTPView.swift */; };
+		FF3FD5EB2BFF8F390096937A /* VoiceRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5EA2BFF8F390096937A /* VoiceRecognitionView.swift */; };
+		FF5071062C6E49EA00925AA0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071052C6E49EA00925AA0 /* HomeView.swift */; };
+		FF5071082C6E4B5800925AA0 /* DementiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071072C6E4B5800925AA0 /* DementiaView.swift */; };
+		FF50710A2C6E4C7400925AA0 /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071092C6E4C7400925AA0 /* MyAccountView.swift */; };
+		FF50710C2C6E4CCB00925AA0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF50710B2C6E4CCB00925AA0 /* SettingsView.swift */; };
+		FF50710E2C6E588F00925AA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF50710D2C6E588F00925AA0 /* User.swift */; };
+		FF5071102C6E5BDA00925AA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF50710F2C6E5BDA00925AA0 /* GoogleService-Info.plist */; };
+		FF5071132C6E5CDB00925AA0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FF5071122C6E5CDB00925AA0 /* FirebaseAuth */; };
+		FF5071152C6E5CDB00925AA0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FF5071142C6E5CDB00925AA0 /* FirebaseFirestore */; };
+		FF5071172C6E5CDB00925AA0 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FF5071162C6E5CDB00925AA0 /* FirebaseFirestoreCombine-Community */; };
+		FF5071192C6E5CDB00925AA0 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = FF5071182C6E5CDB00925AA0 /* FirebaseMLModelDownloader */; };
+		FF50711B2C6E5CDB00925AA0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FF50711A2C6E5CDB00925AA0 /* FirebaseStorage */; };
+		FF50711D2C6E5D6E00925AA0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF50711C2C6E5D6E00925AA0 /* AuthViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF1193DB2BF7BE3500BA0751 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF1193C22BF7BE3300BA0751 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF1193C92BF7BE3300BA0751;
+			remoteInfo = MindfulMe;
+		};
+		FF1193E52BF7BE3500BA0751 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF1193C22BF7BE3300BA0751 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF1193C92BF7BE3300BA0751;
+			remoteInfo = MindfulMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF1193CA2BF7BE3300BA0751 /* MindfulMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1193CD2BF7BE3300BA0751 /* MindfulMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulMeApp.swift; sourceTree = "<group>"; };
+		FF1193CF2BF7BE3300BA0751 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FF1193D12BF7BE3500BA0751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF1193D42BF7BE3500BA0751 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF1193DA2BF7BE3500BA0751 /* MindfulMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindfulMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1193DE2BF7BE3500BA0751 /* MindfulMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulMeTests.swift; sourceTree = "<group>"; };
+		FF1193E42BF7BE3500BA0751 /* MindfulMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindfulMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1193E82BF7BE3500BA0751 /* MindfulMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulMeUITests.swift; sourceTree = "<group>"; };
+		FF1193EA2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF1193FB2BF7C1E900BA0751 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		FF1193FD2BF7C48400BA0751 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
+		FF1193FF2BF7DCE100BA0751 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		FF1194012BF7E9F800BA0751 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		FF1194062BF7F4F400BA0751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF3FD5E42BFB8B1D0096937A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		FF3FD5E62BFBA0FE0096937A /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		FF3FD5E82BFBA6960096937A /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		FF3FD5EA2BFF8F390096937A /* VoiceRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionView.swift; sourceTree = "<group>"; };
+		FF5071052C6E49EA00925AA0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FF5071072C6E4B5800925AA0 /* DementiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DementiaView.swift; sourceTree = "<group>"; };
+		FF5071092C6E4C7400925AA0 /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
+		FF50710B2C6E4CCB00925AA0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FF50710D2C6E588F00925AA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FF50710F2C6E5BDA00925AA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF50711C2C6E5D6E00925AA0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF1193C72BF7BE3300BA0751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5071172C6E5CDB00925AA0 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				FF5071132C6E5CDB00925AA0 /* FirebaseAuth in Frameworks */,
+				FF5071152C6E5CDB00925AA0 /* FirebaseFirestore in Frameworks */,
+				FF50711B2C6E5CDB00925AA0 /* FirebaseStorage in Frameworks */,
+				FF5071192C6E5CDB00925AA0 /* FirebaseMLModelDownloader in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193D72BF7BE3500BA0751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193E12BF7BE3500BA0751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF1193C12BF7BE3300BA0751 = {
+			isa = PBXGroup;
+			children = (
+				FF1193CC2BF7BE3300BA0751 /* MindfulMe */,
+				FF1193DD2BF7BE3500BA0751 /* MindfulMeTests */,
+				FF1193E72BF7BE3500BA0751 /* MindfulMeUITests */,
+				FF1193CB2BF7BE3300BA0751 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF1193CB2BF7BE3300BA0751 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193CA2BF7BE3300BA0751 /* MindfulMe.app */,
+				FF1193DA2BF7BE3500BA0751 /* MindfulMeTests.xctest */,
+				FF1193E42BF7BE3500BA0751 /* MindfulMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF1193CC2BF7BE3300BA0751 /* MindfulMe */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193F82BF7C1A700BA0751 /* Helpers */,
+				FF1193F72BF7BE6600BA0751 /* View */,
+				FF1193CD2BF7BE3300BA0751 /* MindfulMeApp.swift */,
+				FF50710F2C6E5BDA00925AA0 /* GoogleService-Info.plist */,
+				FF1193D12BF7BE3500BA0751 /* Assets.xcassets */,
+				FF1193D32BF7BE3500BA0751 /* Preview Content */,
+				FF1194062BF7F4F400BA0751 /* ContentView.swift */,
+			);
+			path = MindfulMe;
+			sourceTree = "<group>";
+		};
+		FF1193D32BF7BE3500BA0751 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193D42BF7BE3500BA0751 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF1193DD2BF7BE3500BA0751 /* MindfulMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193DE2BF7BE3500BA0751 /* MindfulMeTests.swift */,
+			);
+			path = MindfulMeTests;
+			sourceTree = "<group>";
+		};
+		FF1193E72BF7BE3500BA0751 /* MindfulMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193E82BF7BE3500BA0751 /* MindfulMeUITests.swift */,
+				FF1193EA2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift */,
+			);
+			path = MindfulMeUITests;
+			sourceTree = "<group>";
+		};
+		FF1193F72BF7BE6600BA0751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193CF2BF7BE3300BA0751 /* Login.swift */,
+				FF1193FD2BF7C48400BA0751 /* CustomTF.swift */,
+				FF1193FF2BF7DCE100BA0751 /* GradientButton.swift */,
+				FF1194012BF7E9F800BA0751 /* Signup.swift */,
+				FF3FD5E42BFB8B1D0096937A /* ForgotPassword.swift */,
+				FF3FD5E62BFBA0FE0096937A /* PasswordResetView.swift */,
+				FF3FD5E82BFBA6960096937A /* OTPView.swift */,
+				FF3FD5EA2BFF8F390096937A /* VoiceRecognitionView.swift */,
+				FF5071052C6E49EA00925AA0 /* HomeView.swift */,
+				FF5071072C6E4B5800925AA0 /* DementiaView.swift */,
+				FF5071092C6E4C7400925AA0 /* MyAccountView.swift */,
+				FF50710B2C6E4CCB00925AA0 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF1193F82BF7C1A700BA0751 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF1193FB2BF7C1E900BA0751 /* View+Extensions.swift */,
+				FF50710D2C6E588F00925AA0 /* User.swift */,
+				FF50711C2C6E5D6E00925AA0 /* AuthViewModel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF1193C92BF7BE3300BA0751 /* MindfulMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF1193EE2BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMe" */;
+			buildPhases = (
+				FF1193C62BF7BE3300BA0751 /* Sources */,
+				FF1193C72BF7BE3300BA0751 /* Frameworks */,
+				FF1193C82BF7BE3300BA0751 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MindfulMe;
+			packageProductDependencies = (
+				FF5071122C6E5CDB00925AA0 /* FirebaseAuth */,
+				FF5071142C6E5CDB00925AA0 /* FirebaseFirestore */,
+				FF5071162C6E5CDB00925AA0 /* FirebaseFirestoreCombine-Community */,
+				FF5071182C6E5CDB00925AA0 /* FirebaseMLModelDownloader */,
+				FF50711A2C6E5CDB00925AA0 /* FirebaseStorage */,
+			);
+			productName = MindfulMe;
+			productReference = FF1193CA2BF7BE3300BA0751 /* MindfulMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF1193D92BF7BE3500BA0751 /* MindfulMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF1193F12BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMeTests" */;
+			buildPhases = (
+				FF1193D62BF7BE3500BA0751 /* Sources */,
+				FF1193D72BF7BE3500BA0751 /* Frameworks */,
+				FF1193D82BF7BE3500BA0751 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF1193DC2BF7BE3500BA0751 /* PBXTargetDependency */,
+			);
+			name = MindfulMeTests;
+			productName = MindfulMeTests;
+			productReference = FF1193DA2BF7BE3500BA0751 /* MindfulMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF1193E32BF7BE3500BA0751 /* MindfulMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF1193F42BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMeUITests" */;
+			buildPhases = (
+				FF1193E02BF7BE3500BA0751 /* Sources */,
+				FF1193E12BF7BE3500BA0751 /* Frameworks */,
+				FF1193E22BF7BE3500BA0751 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF1193E62BF7BE3500BA0751 /* PBXTargetDependency */,
+			);
+			name = MindfulMeUITests;
+			productName = MindfulMeUITests;
+			productReference = FF1193E42BF7BE3500BA0751 /* MindfulMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF1193C22BF7BE3300BA0751 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FF1193C92BF7BE3300BA0751 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FF1193D92BF7BE3500BA0751 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FF1193C92BF7BE3300BA0751;
+					};
+					FF1193E32BF7BE3500BA0751 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FF1193C92BF7BE3300BA0751;
+					};
+				};
+			};
+			buildConfigurationList = FF1193C52BF7BE3300BA0751 /* Build configuration list for PBXProject "MindfulMe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF1193C12BF7BE3300BA0751;
+			packageReferences = (
+				FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = FF1193CB2BF7BE3300BA0751 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF1193C92BF7BE3300BA0751 /* MindfulMe */,
+				FF1193D92BF7BE3500BA0751 /* MindfulMeTests */,
+				FF1193E32BF7BE3500BA0751 /* MindfulMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF1193C82BF7BE3300BA0751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1193D52BF7BE3500BA0751 /* Preview Assets.xcassets in Resources */,
+				FF1193D22BF7BE3500BA0751 /* Assets.xcassets in Resources */,
+				FF5071102C6E5BDA00925AA0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193D82BF7BE3500BA0751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193E22BF7BE3500BA0751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF1193C62BF7BE3300BA0751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF50710C2C6E4CCB00925AA0 /* SettingsView.swift in Sources */,
+				FF1194002BF7DCE100BA0751 /* GradientButton.swift in Sources */,
+				FF1193D02BF7BE3300BA0751 /* Login.swift in Sources */,
+				FF3FD5E92BFBA6960096937A /* OTPView.swift in Sources */,
+				FF50710E2C6E588F00925AA0 /* User.swift in Sources */,
+				FF1194072BF7F4F400BA0751 /* ContentView.swift in Sources */,
+				FF3FD5E52BFB8B1D0096937A /* ForgotPassword.swift in Sources */,
+				FF50711D2C6E5D6E00925AA0 /* AuthViewModel.swift in Sources */,
+				FF5071082C6E4B5800925AA0 /* DementiaView.swift in Sources */,
+				FF1193CE2BF7BE3300BA0751 /* MindfulMeApp.swift in Sources */,
+				FF1193FE2BF7C48400BA0751 /* CustomTF.swift in Sources */,
+				FF3FD5E72BFBA0FE0096937A /* PasswordResetView.swift in Sources */,
+				FF1193FC2BF7C1E900BA0751 /* View+Extensions.swift in Sources */,
+				FF50710A2C6E4C7400925AA0 /* MyAccountView.swift in Sources */,
+				FF5071062C6E49EA00925AA0 /* HomeView.swift in Sources */,
+				FF3FD5EB2BFF8F390096937A /* VoiceRecognitionView.swift in Sources */,
+				FF1194022BF7E9F800BA0751 /* Signup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193D62BF7BE3500BA0751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1193DF2BF7BE3500BA0751 /* MindfulMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1193E02BF7BE3500BA0751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1193EB2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift in Sources */,
+				FF1193E92BF7BE3500BA0751 /* MindfulMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF1193DC2BF7BE3500BA0751 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF1193C92BF7BE3300BA0751 /* MindfulMe */;
+			targetProxy = FF1193DB2BF7BE3500BA0751 /* PBXContainerItemProxy */;
+		};
+		FF1193E62BF7BE3500BA0751 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF1193C92BF7BE3300BA0751 /* MindfulMe */;
+			targetProxy = FF1193E52BF7BE3500BA0751 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF1193EC2BF7BE3500BA0751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF1193ED2BF7BE3500BA0751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF1193EF2BF7BE3500BA0751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MindfulMe/Preview Content\"";
+				DEVELOPMENT_TEAM = CPZJ486D3A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF1193F02BF7BE3500BA0751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MindfulMe/Preview Content\"";
+				DEVELOPMENT_TEAM = CPZJ486D3A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF1193F22BF7BE3500BA0751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindfulMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MindfulMe";
+			};
+			name = Debug;
+		};
+		FF1193F32BF7BE3500BA0751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindfulMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MindfulMe";
+			};
+			name = Release;
+		};
+		FF1193F52BF7BE3500BA0751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MindfulMe;
+			};
+			name = Debug;
+		};
+		FF1193F62BF7BE3500BA0751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MindfulMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF1193C52BF7BE3300BA0751 /* Build configuration list for PBXProject "MindfulMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1193EC2BF7BE3500BA0751 /* Debug */,
+				FF1193ED2BF7BE3500BA0751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF1193EE2BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1193EF2BF7BE3500BA0751 /* Debug */,
+				FF1193F02BF7BE3500BA0751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF1193F12BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1193F22BF7BE3500BA0751 /* Debug */,
+				FF1193F32BF7BE3500BA0751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF1193F42BF7BE3500BA0751 /* Build configuration list for PBXNativeTarget "MindfulMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1193F52BF7BE3500BA0751 /* Debug */,
+				FF1193F62BF7BE3500BA0751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF5071122C6E5CDB00925AA0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FF5071142C6E5CDB00925AA0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FF5071162C6E5CDB00925AA0 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		FF5071182C6E5CDB00925AA0 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		FF50711A2C6E5CDB00925AA0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5071112C6E5CDB00925AA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FF1193C22BF7BE3300BA0751 /* Project object */;
+}

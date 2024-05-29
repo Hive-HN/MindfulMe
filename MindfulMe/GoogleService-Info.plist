@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBSlXBiHqCxhBrzN0kBqMX3HsnCXhvm9F0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>276273235225</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>nrbde01.learning.MindfulMe</string>
+	<key>PROJECT_ID</key>
+	<string>mindfulme-f8b73</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mindfulme-f8b73.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:276273235225:ios:d97bca824ef8a2397c3188</string>
+</dict>
+</plist>
