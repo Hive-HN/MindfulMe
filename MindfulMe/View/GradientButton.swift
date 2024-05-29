@@ -23,7 +23,7 @@ struct GradientButton: View {
             .padding(.horizontal, 35)
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color(red: 173 / 255, green: 216 / 255, blue: 230 / 255), Color.blue]),
+                    gradient: Gradient(colors: [Color(red: 173 / 255, green: 216 / 255, blue: 230 / 255), Color.yellow]),
                     startPoint: .top,
                     endPoint: .bottom), in: .capsule
             )

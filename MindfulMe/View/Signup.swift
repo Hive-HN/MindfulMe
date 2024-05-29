@@ -19,7 +19,7 @@ struct Signup: View {
     var body: some View {
         ZStack {
             // Background Image
-            Image("Wallpaper")
+            Image("MindfulmeAPP")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -64,7 +64,9 @@ struct Signup: View {
                         showSignup = false
                     }
                     .fontWeight(.bold)
+                    .foregroundStyle(.yellow)
                 }
+                
                 .font(.callout)
                 .hSpacing()
             })

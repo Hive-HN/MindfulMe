@@ -8,7 +8,7 @@ struct VoiceRecognitionView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image("Wallpaper")
+                Image("MindfulmeAPP")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
@@ -40,7 +40,7 @@ struct VoiceRecognitionView: View {
                                 Text("Record")
                             }
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.yellow)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         }
@@ -55,7 +55,7 @@ struct VoiceRecognitionView: View {
                                 Text("My Records")
                             }
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.yellow)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         }
@@ -112,7 +112,7 @@ struct RecordView: View {
                     .foregroundColor(Color.black)
             }
                 .padding()
-               .background(Color.red)
+               .background(Color.yellow)
                .cornerRadius(25)
 
             if isRecording {

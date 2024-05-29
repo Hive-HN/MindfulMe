@@ -18,7 +18,7 @@ struct Login: View {
     var body: some View {
         ZStack {
             // Background Image
-            Image("Wallpaper")
+            Image("MindfulmeAPP")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -32,16 +32,18 @@ struct Login: View {
                     CustomTF(sfIcon: "at", iconTint: .gray, hint: "Email", value: $emailID)
                     CustomTF(sfIcon: "lock", iconTint: .gray, hint: "Password", isPassword: true, value: $password)
                         .padding(.top, 5)
-                    Button("Forgot Password?") {
-                        showForgotPassword.toggle()
-                    }
-                    .font(.callout)
-                    .fontWeight(.heavy)
-                    .hSpacing(.trailing)
+                   
                     GradientButton(title: "Login", icon: "arrow.right") {
                     }
                     .hSpacing(.trailing)
                     .disableWithOpacity(emailID.isEmpty || password.isEmpty)
+                    Button("Forgot Password?") {
+                        showForgotPassword.toggle()
+                    }
+                    .foregroundStyle(.yellow)
+                    .font(.callout)
+                    .fontWeight(.heavy)
+                    .hSpacing(.trailing)
                 }
                 .padding(.top, 20)
 
@@ -52,8 +54,11 @@ struct Login: View {
                         .foregroundStyle(.white)
                     Button("Sign Up") {
                         showSignup.toggle()
+
                     }
                     .fontWeight(.bold)
+                    .foregroundStyle(.yellow)
+
                 }
                 .font(.callout)
                 .hSpacing()
