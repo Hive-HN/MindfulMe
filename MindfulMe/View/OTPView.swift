@@ -32,11 +32,11 @@ struct OTPView: View {
                         .keyboardType(.numberPad)
                         .hSpacing(.trailing)
                     
-                    NavigationLink(destination: PasswordResetView(), isActive: $navigateToReset) {
-                        GradientButton(title: "Submit Code", icon: "arrow.right") {
-                            navigateToReset = true
-                        }
-                    }
+                    //NavigationLink(destination: PasswordResetView(), isActive: //$navigateToReset) {
+                        //GradientButton(title: "Submit Code", icon: "arrow.right") {
+                        //    navigateToReset = true
+                      //  }
+                    //}
                     .hSpacing(.trailing)
                     .disableWithOpacity(otpText.isEmpty)
                 }

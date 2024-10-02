@@ -1,11 +1,17 @@
 import SwiftUI
 
 struct DementiaView: View {
-    @State private var displayedText: String = ""
-    @State private var isTextVisible: Bool = false
-    @State private var isMessageShown: Bool = false
-    private let fullMessage = "Welcome to the Dementia Checker, we are here always to help you have a better and healthier life. Please listen to the following questions and answer using our voice recorder."
-
+    @State private var isMessageShown: Bool = true
+    @State private var questions: [Question] = []
+    @State private var currentQuestionIndex: Int = 0
+    @State private var selectedAnswers: [String?] = []
+    @State private var score: Int = 0
+    @State private var quizFinished: Bool = false
+    @StateObject private var viewModel = AuthViewModel()
+    
+    private let fullMessage = "Welcome to the Dementia Checker, read the following questions carefully and pick the right answer."
+    private let butterColor = Color(red: 1.0, green: 0.85, blue: 0.55) // Butter color definition
+    
     var body: some View {
         ZStack {
             // Background Image
@@ -19,64 +25,155 @@ struct DementiaView: View {
             VStack {
                 Spacer()
                 
-                if isTextVisible && isMessageShown {
-                    Text(displayedText)
-                        .font(.system(size: 24, weight: .bold)) // Custom font size and weight
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
+                if isMessageShown && !quizFinished {
+                    Text(fullMessage)
+                        .foregroundColor(.black)
+                        .fontWeight(.heavy)
                         .padding()
-                        .background(Color.black.opacity(0.7))
-                        .cornerRadius(10)
+                        .background(Color.yellow)
+                        .cornerRadius(20)
+                }
+                
+                if !quizFinished {
+                    if !questions.isEmpty {
+                        VStack {
+                            Text(questions[currentQuestionIndex].title)
+                                .foregroundColor(.yellow)
+                                .fontWeight(.heavy)
+                                .padding()
+                                .background(Color.black)
+                                .cornerRadius(20)
+                                .padding(.bottom, 20)
+                            
+                            VStack(spacing: 5) { // Reduced spacing
+                                ForEach(questions[currentQuestionIndex].options, id: \.self) { option in
+                                    HStack {
+                                        Text(option)
+                                            .foregroundColor(.yellow)
+                                            .padding(5) // Reduced padding
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .lineLimit(1) // Ensure the text does not overflow
+
+                                        Spacer()
+                                        
+                                        Button(action: {
+                                            selectedAnswers[currentQuestionIndex] = option
+                                        }) {
+                                            Circle()
+                                                .fill(selectedAnswers[currentQuestionIndex] == option ? Color.blue : Color.gray)
+                                                .frame(width: 18, height: 18)
+                                                .padding(.trailing, 6)
+                                        }
+                                    }
+                                    .padding(5) // Reduced padding
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                                    .frame(maxWidth: UIScreen.main.bounds.width * 0.9) // Adjust width to fit screen
+                                }
+                            }
+                            .padding(.horizontal, 8)
+                            
+                            HStack {
+                                if currentQuestionIndex > 0 {
+                                    Button(action: {
+                                        if currentQuestionIndex > 0 {
+                                            currentQuestionIndex -= 1
+                                        }
+                                    }) {
+                                        Text("Previous Question")
+                                            .foregroundColor(.black)
+                                            .fontWeight(.semibold)
+                                            .padding(10) // Reduced padding
+                                            .background(Color.yellow)
+                                            .cornerRadius(10)
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    if selectedAnswers[currentQuestionIndex] != nil {
+                                        if currentQuestionIndex < questions.count - 1 {
+                                            currentQuestionIndex += 1
+                                        } else {
+                                            calculateScore()
+                                            quizFinished = true
+                                            isMessageShown = false // Hide the welcome message
+                                        }
+                                    }
+                                }) {
+                                    Text(currentQuestionIndex == questions.count - 1 ? "Finish Quiz" : "Next Question")
+                                        .foregroundColor(.black)
+                                        .fontWeight(.semibold)
+                                        .padding(10) // Reduced padding
+                                        .background(Color.yellow)
+                                        .cornerRadius(10)
+                                }
+                            }
+                            .padding(.top, 20)
+                        }
                         .padding()
-                        .transition(.opacity) // Fade in effect
+                    } else {
+                        Text("Loading questions...")
+                            .foregroundColor(.white)
+                    }
+                } else {
+                    VStack {
+                        Text("Quiz Finished!")
+                            .foregroundColor(.yellow)
+                            .fontWeight(.semibold)
+                            .padding(10) // Reduced padding
+                            .background(Color.black)
+                            .cornerRadius(10)
+                        
+                        Text("Your Score: \(score)/\(questions.count)")
+                            .foregroundColor(.yellow)
+                            .fontWeight(.semibold)
+                            .padding(10) // Reduced padding
+                            .background(Color.black)
+                            .cornerRadius(10)
+                        
+                        Button(action: {
+                            restartQuiz()
+                        }) {
+                            Text("Take Another Quiz")
+                                .foregroundColor(.black)
+                                .fontWeight(.semibold)
+                                .padding(10) // Reduced padding
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                        }
+                        .padding(.top, 20) // Add some spacing above the button
+                    }
                 }
                 
                 Spacer()
             }
         }
         .onAppear {
-            // Delay the appearance of the text
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                isTextVisible = true
-                isMessageShown = true
-                typeWriterEffect()
-                
-                // Hide the message after 10 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    withAnimation {
-                        isMessageShown = false
-                    }
-                }
+            // Fetch random questions
+            viewModel.fetchRandomQuestions { fetchedQuestions in
+                self.questions = fetchedQuestions
+                self.selectedAnswers = Array(repeating: nil, count: fetchedQuestions.count)
             }
         }
     }
     
-    private func typeWriterEffect() {
-        let words = fullMessage.split(separator: " ").map(String.init)
-        var wordIndex = 0
-        var characterIndex = 0
+    private func calculateScore() {
+        score = zip(questions, selectedAnswers).filter { $0.answer == $1 }.count
+    }
+    
+    private func restartQuiz() {
+        currentQuestionIndex = 0
+        score = 0
+        quizFinished = false
+        isMessageShown = true
         
-        // Function to update the displayed text
-        func updateText() {
-            if wordIndex < words.count {
-                if characterIndex < words[wordIndex].count {
-                    displayedText += String(words[wordIndex][words[wordIndex].index(words[wordIndex].startIndex, offsetBy: characterIndex)])
-                    characterIndex += 1
-                } else {
-                    displayedText += " "
-                    characterIndex = 0
-                    wordIndex += 1
-                }
-                
-                // Schedule the next character update
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    updateText()
-                }
-            }
+        // Fetch new set of random questions
+        viewModel.fetchRandomQuestions { fetchedQuestions in
+            self.questions = fetchedQuestions
+            self.selectedAnswers = Array(repeating: nil, count: fetchedQuestions.count)
         }
-        
-        // Start the typing effect
-        updateText()
     }
 }
 

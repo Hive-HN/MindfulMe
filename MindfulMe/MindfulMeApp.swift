@@ -5,6 +5,7 @@ import Firebase
 struct MindfulMeApp: App {
     @StateObject var viewModel = AuthViewModel()
     
+    
     init() {
         FirebaseApp.configure()
     }

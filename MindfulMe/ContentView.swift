@@ -4,11 +4,11 @@ struct ContentView: View {
     @StateObject var viewModel = AuthViewModel()
     @State private var showSignup: Bool = false
     @State private var isKeyboardShowing: Bool = false
-    
+
     var body: some View {
         NavigationStack {
             if viewModel.userSession != nil {
-                HomeView()
+                HomeView() // Start with HomeView
             } else {
                 Login(showSignup: $showSignup)
                     .navigationDestination(isPresented: $showSignup) {
@@ -25,6 +25,11 @@ struct ContentView: View {
             }
         }
         .environmentObject(viewModel)
+        .onChange(of: viewModel.userSession) { newValue in
+            if newValue != nil {
+                // Optional: Additional logic when userSession changes
+            }
+        }
     }
 }
 

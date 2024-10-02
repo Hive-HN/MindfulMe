@@ -23,6 +23,11 @@
 		FF3FD5E72BFBA0FE0096937A /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5E62BFBA0FE0096937A /* PasswordResetView.swift */; };
 		FF3FD5E92BFBA6960096937A /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5E82BFBA6960096937A /* OTPView.swift */; };
 		FF3FD5EB2BFF8F390096937A /* VoiceRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD5EA2BFF8F390096937A /* VoiceRecognitionView.swift */; };
+		FF411F1B2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = FF411F1A2CA47A1F00EEB1CA /* EmotionModel.mlpackage */; };
+		FF411F1C2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = FF411F1A2CA47A1F00EEB1CA /* EmotionModel.mlpackage */; };
+		FF411F1D2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = FF411F1A2CA47A1F00EEB1CA /* EmotionModel.mlpackage */; };
+		FF4E93C82C986E980010375E /* SoundAnalyzerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E93C72C986E980010375E /* SoundAnalyzerController.swift */; };
+		FF4E93D02C987FE90010375E /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E93CF2C987FE20010375E /* MicrophoneMonitor.swift */; };
 		FF5071062C6E49EA00925AA0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071052C6E49EA00925AA0 /* HomeView.swift */; };
 		FF5071082C6E4B5800925AA0 /* DementiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071072C6E4B5800925AA0 /* DementiaView.swift */; };
 		FF50710A2C6E4C7400925AA0 /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5071092C6E4C7400925AA0 /* MyAccountView.swift */; };
@@ -70,10 +75,14 @@
 		FF1193FF2BF7DCE100BA0751 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		FF1194012BF7E9F800BA0751 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		FF1194062BF7F4F400BA0751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF1D076E2C9089A500049A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF3FD5E42BFB8B1D0096937A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		FF3FD5E62BFBA0FE0096937A /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
 		FF3FD5E82BFBA6960096937A /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		FF3FD5EA2BFF8F390096937A /* VoiceRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionView.swift; sourceTree = "<group>"; };
+		FF411F1A2CA47A1F00EEB1CA /* EmotionModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = EmotionModel.mlpackage; sourceTree = "<group>"; };
+		FF4E93C72C986E980010375E /* SoundAnalyzerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundAnalyzerController.swift; sourceTree = "<group>"; };
+		FF4E93CF2C987FE20010375E /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
 		FF5071052C6E49EA00925AA0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF5071072C6E4B5800925AA0 /* DementiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DementiaView.swift; sourceTree = "<group>"; };
 		FF5071092C6E4C7400925AA0 /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
@@ -116,6 +125,7 @@
 		FF1193C12BF7BE3300BA0751 = {
 			isa = PBXGroup;
 			children = (
+				FF411F1A2CA47A1F00EEB1CA /* EmotionModel.mlpackage */,
 				FF1193CC2BF7BE3300BA0751 /* MindfulMe */,
 				FF1193DD2BF7BE3500BA0751 /* MindfulMeTests */,
 				FF1193E72BF7BE3500BA0751 /* MindfulMeUITests */,
@@ -136,6 +146,7 @@
 		FF1193CC2BF7BE3300BA0751 /* MindfulMe */ = {
 			isa = PBXGroup;
 			children = (
+				FF1D076E2C9089A500049A96 /* Info.plist */,
 				FF1193F82BF7C1A700BA0751 /* Helpers */,
 				FF1193F72BF7BE6600BA0751 /* View */,
 				FF1193CD2BF7BE3300BA0751 /* MindfulMeApp.swift */,
@@ -194,9 +205,11 @@
 		FF1193F82BF7C1A700BA0751 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FF4E93CF2C987FE20010375E /* MicrophoneMonitor.swift */,
 				FF1193FB2BF7C1E900BA0751 /* View+Extensions.swift */,
 				FF50710D2C6E588F00925AA0 /* User.swift */,
 				FF50711C2C6E5D6E00925AA0 /* AuthViewModel.swift */,
+				FF4E93C72C986E980010375E /* SoundAnalyzerController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -272,7 +285,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					FF1193C92BF7BE3300BA0751 = {
 						CreatedOnToolsVersion = 15.0;
@@ -347,12 +360,15 @@
 				FF1193D02BF7BE3300BA0751 /* Login.swift in Sources */,
 				FF3FD5E92BFBA6960096937A /* OTPView.swift in Sources */,
 				FF50710E2C6E588F00925AA0 /* User.swift in Sources */,
+				FF4E93D02C987FE90010375E /* MicrophoneMonitor.swift in Sources */,
 				FF1194072BF7F4F400BA0751 /* ContentView.swift in Sources */,
+				FF411F1B2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */,
 				FF3FD5E52BFB8B1D0096937A /* ForgotPassword.swift in Sources */,
 				FF50711D2C6E5D6E00925AA0 /* AuthViewModel.swift in Sources */,
 				FF5071082C6E4B5800925AA0 /* DementiaView.swift in Sources */,
 				FF1193CE2BF7BE3300BA0751 /* MindfulMeApp.swift in Sources */,
 				FF1193FE2BF7C48400BA0751 /* CustomTF.swift in Sources */,
+				FF4E93C82C986E980010375E /* SoundAnalyzerController.swift in Sources */,
 				FF3FD5E72BFBA0FE0096937A /* PasswordResetView.swift in Sources */,
 				FF1193FC2BF7C1E900BA0751 /* View+Extensions.swift in Sources */,
 				FF50710A2C6E4C7400925AA0 /* MyAccountView.swift in Sources */,
@@ -367,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1193DF2BF7BE3500BA0751 /* MindfulMeTests.swift in Sources */,
+				FF411F1C2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF411F1D2CA47A1F00EEB1CA /* EmotionModel.mlpackage in Sources */,
 				FF1193EB2BF7BE3500BA0751 /* MindfulMeUITestsLaunchTests.swift in Sources */,
 				FF1193E92BF7BE3500BA0751 /* MindfulMeUITests.swift in Sources */,
 			);
@@ -525,17 +543,20 @@
 				DEVELOPMENT_TEAM = CPZJ486D3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MindfulMe/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for audio recording.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noureldin.mindfulmeapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -554,17 +575,20 @@
 				DEVELOPMENT_TEAM = CPZJ486D3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MindfulMe/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for audio recording.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nrbde01.learning.MindfulMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noureldin.mindfulmeapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -575,7 +599,6 @@
 		FF1193F22BF7BE3500BA0751 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -594,7 +617,6 @@
 		FF1193F32BF7BE3500BA0751 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -613,7 +635,6 @@
 		FF1193F52BF7BE3500BA0751 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -630,7 +651,6 @@
 		FF1193F62BF7BE3500BA0751 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

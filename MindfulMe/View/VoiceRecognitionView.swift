@@ -2,176 +2,136 @@ import SwiftUI
 import AVFoundation
 
 struct VoiceRecognitionView: View {
-    @State private var currentPage = "record"
-    @State private var recordings: [URL] = []
-
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                
-                Image("MindfulmeAPP")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: -30)
-
-                VStack {
-                    
-                    if currentPage == "record" {
-                        RecordView(recordings: $recordings)
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.95) // Adjust the height as needed
-                    } else if currentPage == "records" {
-                        RecordsView(recordings: recordings, onDelete: { index in
-                            recordings.remove(at: index)
-                        })
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.95)
-
-                    }
-
-                    Spacer()
-
-                    HStack {
-                        Spacer()
-
-                        Button(action: {
-                            currentPage = "record"
-                        }) {
-                            HStack {
-                                Image(systemName: "mic.fill")
-                                Text("Record")
-                            }
-                            .padding()
-                            .background(Color.yellow)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
-                        }
-
-                        Spacer()
-
-                        Button(action: {
-                            currentPage = "records"
-                        }) {
-                            HStack {
-                                Image(systemName: "waveform.path.ecg")
-                                Text("My Records")
-                            }
-                            .padding()
-                            .background(Color.yellow)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
-                        }
-
-                        Spacer()
-                    }
-                    .padding()
-                }
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-        }
-    }
-}
-
-struct RecordView: View {
-    @Binding var recordings: [URL]
-    @State private var audioRecorder: AVAudioRecorder?
+    @StateObject private var mic = MicrophoneMonitor(numberOfSamples: 10)
+    @StateObject private var soundAnalyzer = SoundAnalyzerController(model: EmotionModel())
     @State private var isRecording = false
-
-    var body: some View {
-        
-        VStack {
-            Button(action: {
-                if isRecording {
-                    // Stop Recording
-                    isRecording = false
-                    audioRecorder?.stop()
-                    if let audioURL = audioRecorder?.url {
-                        recordings.append(audioURL) // Save the recorded audio to recordings
-                    }
-                } else {
-                    // Start Recording
-                    isRecording = true
-                    // Start audio recording
-                    let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-                    let settings = [
-                        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                        AVSampleRateKey: 12000,
-                        AVNumberOfChannelsKey: 1,
-                        AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-                    ]
-                    do {
-                        audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-                        audioRecorder?.record()
-                    } catch {
-                        // Handle recording error
-                        print("Error recording audio: \(error.localizedDescription)")
-                    }
-                }
-            }) {
-                Text(isRecording ? "Stop Recording": "Start Recording")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .foregroundColor(Color.black)
-            }
-                .padding()
-               .background(Color.yellow)
-               .cornerRadius(25)
-
-            if isRecording {
-                WaveformView()
-            }
-        }
-    }
-}
-
-struct WaveformView: View {
-    var body: some View {
-        Rectangle()
-            .fill(Color.black)
-            .frame(height: 50)
-            .cornerRadius(5)
-            .padding()
-    }
-}
-
-struct RecordsView: View {
-    var recordings: [URL]
-    var onDelete: (Int) -> Void
+    @State private var recordedAudioURLs: [URL] = []
+    @State private var audioPlayer: AVAudioPlayer?
     
     var body: some View {
-        VStack {
-            if (recordings.count == 0) {
-                Text("The File Is Empty...")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .foregroundColor(Color.black)
-                    .background(Color.yellow)
-            }
-            else {
-                List {
-                    ForEach(recordings.indices, id: \.self) { index in
-                        HStack {
-                            Text(recordings[index].lastPathComponent)
-                            Spacer()
-                            Button(action: {
-                                onDelete(index)
-                            }) {
-                                Image(systemName: "trash")
+        NavigationView {
+            VStack {
+                ZStack {
+                    Image("MindfulmeAPP")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                        .padding(.leading, -50)
+
+                    VStack {
+                        Text("Voice Emotion Detection")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .padding()
+                        
+                        // Visual representation of sound levels
+                        HStack(spacing: 4) {
+                            ForEach(mic.soundSamples, id: \.self) { level in
+                                BarView(value: self.normalizeSoundLevel(level: level))
+                            }
+                            
+                        }
+                        .frame(height: 150)
+                        .padding()
+                        
+                        // Start/Stop Recording Button
+                        Button(action: {
+                            isRecording ? stopRecording() : startRecording()
+                        }) {
+                            Image(systemName: isRecording ? "stop.fill" : "mic.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(isRecording ? .red : .green)
+                        }
+                        .padding()
+                        
+                        // List of recorded audio notes
+                        List {
+                            ForEach(recordedAudioURLs, id: \.self) { url in
+                                HStack {
+                                    Button(action: {
+                                        playAudio(url: url)
+                                    }) {
+                                        Image(systemName: "play.circle.fill")
+                                            .foregroundColor(.blue)
+                                    }
+                                    
+                                    Button(action: {
+                                        analyzeAudioFile(url: url)
+                                    }) {
+                                        Image(systemName: "waveform")
+                                            .foregroundColor(.orange)
+                                    }
+                                    
+                                    Text(url.lastPathComponent)
+                                }
                             }
                         }
+                        .padding()
+                        
+                        Spacer()
+                        
+                        Text(soundAnalyzer.transcriberText)
+                            .foregroundColor(soundAnalyzer.color)
+                            .padding()
+                            .font(.headline)
                     }
                 }
             }
         }
     }
-}
-
-func getDocumentsDirectory() -> URL {
-    FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    
+    // Normalize the sound level for UI representation
+    private func normalizeSoundLevel(level: Float) -> CGFloat {
+        let level = max(0.2, CGFloat(level) + 50) / 2
+        return CGFloat(level * (200 / 25)) // scaled to max at 300 (our height of our bar)
+    }
+    
+    private func startRecording() {
+        soundAnalyzer.startAnalyzing()
+        isRecording = true
+        // Implement recording start logic if needed
+    }
+    
+    private func stopRecording() {
+        soundAnalyzer.stopAnalyzing()
+        isRecording = false
+        saveRecording()
+    }
+    
+    private func saveRecording() {
+        // Implement the logic to save the recording to a file
+        // You should add the file URL to the `recordedAudioURLs` array
+    }
+    
+    private func playAudio(url: URL) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("Error playing audio file: \(error.localizedDescription)")
+        }
+    }
+    
+    private func analyzeAudioFile(url: URL) {
+        soundAnalyzer.analyzeAudioFile(url: url)
+    }
 }
 
 struct VoiceRecognitionView_Previews: PreviewProvider {
     static var previews: some View {
         VoiceRecognitionView()
+    }
+}
+
+struct BarView: View {
+    var value: CGFloat
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 20)
+            .fill(LinearGradient(gradient: Gradient(colors: [.purple, .blue]),
+                                 startPoint: .top,
+                                 endPoint: .bottom))
+            .frame(width: 20, height: value)
     }
 }

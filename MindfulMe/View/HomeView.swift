@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
